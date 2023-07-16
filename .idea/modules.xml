@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/AITR-Java-Basic-Course-2023.iml" filepath="$PROJECT_DIR$/AITR-Java-Basic-Course-2023.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson_3/code/Homework/Homework.iml" filepath="$PROJECT_DIR$/lesson_3/code/Homework/Homework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson_6/code/Homework_6/Homework_6.iml" filepath="$PROJECT_DIR$/lesson_6/code/Homework_6/Homework_6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson_5/code/arif_3/arif_3.iml" filepath="$PROJECT_DIR$/lesson_5/code/arif_3/arif_3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson_5/code/ariphmetics 2/ariphmetics 2.iml" filepath="$PROJECT_DIR$/lesson_5/code/ariphmetics 2/ariphmetics 2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson_4/code/arithmetic/arithmetic.iml" filepath="$PROJECT_DIR$/lesson_4/code/arithmetic/arithmetic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson_6/char/char.iml" filepath="$PROJECT_DIR$/lesson_6/char/char.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson_14/code/code.iml" filepath="$PROJECT_DIR$/lesson_14/code/code.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson_4/homework/homework1/homework1.iml" filepath="$PROJECT_DIR$/lesson_4/homework/homework1/homework1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson_4/homework_1/homework_1.iml" filepath="$PROJECT_DIR$/lesson_4/homework_1/homework_1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson_4/code/homework_5/homework_2.iml" filepath="$PROJECT_DIR$/lesson_4/code/homework_5/homework_2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson_7/code/if _else praxis/if _else praxis.iml" filepath="$PROJECT_DIR$/lesson_7/code/if _else praxis/if _else praxis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lesson_8/code/if-else-switch-praxis/if-else-switch-praxis.iml" filepath="$PROJECT_DIR$/Lesson_8/code/if-else-switch-praxis/if-else-switch-praxis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson_6/code/metod example/metod example.iml" filepath="$PROJECT_DIR$/lesson_6/code/metod example/metod example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson_11/code/metod_praxis/metod_praxis.iml" filepath="$PROJECT_DIR$/lesson_11/code/metod_praxis/metod_praxis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson_6/code/string praxis/string praxis.iml" filepath="$PROJECT_DIR$/lesson_6/code/string praxis/string praxis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson_9/code/while_do/while_do.iml" filepath="$PROJECT_DIR$/lesson_9/code/while_do/while_do.iml" />
+    </modules>
+  </component>
+</project>
