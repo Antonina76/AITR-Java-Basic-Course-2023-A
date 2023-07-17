@@ -72,4 +72,11 @@ public class Bus {
         }
         return;
     }
+    public void speedUp (int speed){
+
+    }
+
+    public void speedDown (int speed){
+
+    }
 }
