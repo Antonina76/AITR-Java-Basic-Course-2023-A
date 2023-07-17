@@ -55,6 +55,7 @@ public class Computer {
     public String toString() {
         return "Brand: " + brand + ", " + " ,cpu: " + cpu + ", RAM:" + ram + " ,ssd " + ssd;
     }
+
     //метод для сравнения объектов
 
     @Override
