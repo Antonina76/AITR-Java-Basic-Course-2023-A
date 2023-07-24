@@ -39,6 +39,7 @@ public class ShapeAppl {
         return sum1;
     }
 
+
     public static void printArray(Shape[] shapes) {
         for (int i = 0; i < shapes.length; i++) {
             if (shapes[i] != null) {
@@ -48,5 +49,6 @@ public class ShapeAppl {
         }
 
     }
+
 
 }
