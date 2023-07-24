@@ -1,13 +1,12 @@
-package company_employes.practice.dao.test;
-import company_employes.practice.dao.Company;
-import company_employes.practice.dao.CompanyImpl;
-import company_employes.practice.dao.model.Employee;
-import company_employes.practice.dao.model.Manager;
-import company_employes.practice.dao.model.SalesManager;
-import company_employes.practice.dao.model.WageEmployee;
+package dao.test;
+import dao.Company;
+import dao.CompanyImpl;
+import dao.model.Employee;
+import dao.model.Manager;
+import dao.model.SalesManager;
+import dao.model.WageEmployee;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.Assertions.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -22,22 +21,22 @@ Employee[] firm;
         firm[1] = new SalesManager(101, "Bread", "Pitt", 174, 300000, 0.1);
         firm[2] = new SalesManager(102, "Julia", "Roberts", 174, 300000, 0.1);
         firm[3] = new WageEmployee(103, "Robert", "Robert", 80,20 );
-
-     //   for (int i = 0; i < firm.length; i++) {
-     //       company.addEmployee(firm[i]);
+        //добавляем работников в company
+      for (int i = 0; i < firm.length; i++) {
+            company.addEmployee(firm[i]);
         }
-  //  }
+   }
 
 
 
    @Test
     void addEmployee() {
        assertFalse(company.addEmployee(null)); // нельзя добавить "пустого" сотрудника
-       assertTrue(company.addEmployee(firm[0])); // можно добавить сотрудника
-       assertTrue(company.addEmployee(firm[1])); // можно добавить сотрудника
-       assertTrue(company.addEmployee(firm[2])); // можно добавить сотрудника
-       assertTrue(company.addEmployee(firm[3])); // можно добавить сотрудника
-       assertEquals(4, company.size());
+     //  assertTrue(company.addEmployee(firm[0])); // можно добавить сотрудника
+       //assertTrue(company.addEmployee(firm[1])); // можно добавить сотрудника
+       //assertTrue(company.addEmployee(firm[2])); // можно добавить сотрудника
+       //assertTrue(company.addEmployee(firm[3])); // можно добавить сотрудника
+       assertEquals(4, company.size()); // ожидаем рост размера компании
        Employee employee = new SalesManager(106, "Peter", "Petrov", 180, 40000, 0.1);
        assertTrue(company.addEmployee(employee));
        assertEquals(5, company.size());
@@ -49,15 +48,17 @@ Employee[] firm;
 
     @Test
     void removeEmployee() {
-        company.addEmployee(firm[3]);
+ //    company.addEmployee(firm[3]);
         System.out.println(company.size());
-        assertEquals(firm[3],company.removeEmployee(103));
-        assertEquals(0,company.size());
+      assertEquals(firm[3],company.removeEmployee(103));
+     assertEquals(3,company.size());
 
     }
 
     @Test
     void findEmployee() {
+        System.out.println(company.size());
+        assertEquals(firm[1],company.findEmployee(101));
     }
 
     @Test

@@ -1,11 +1,11 @@
-package company_employes.practice.dao;
+package dao;
 
-import company_employes.practice.dao.model.Employee;
+import dao.model.Employee;
 
 public class CompanyImpl implements Company {
 
 
-    private  Employee [] employees;
+    private  Employee[] employees;
     public  int size;
    //designer
     public CompanyImpl(int capacity) {
@@ -24,6 +24,12 @@ public class CompanyImpl implements Company {
 
     @Override
     public Employee removeEmployee(int id) {
+       // алгоритм удаления сотрудника из массива по его ID
+       //ищем в цикле по всем employee (или обегаем массив)
+       //если нашелся сотрудник с заданным ИД: 1.сохранить удаляемого сотрудника (victim) в объектную переменную
+       //2. на место удаленного сотрудника переносим последнего в массиве сотрудника
+       //3. последнего затираем с помощью ссылки null
+       //4. size --, уменьшаем размер массива
         for (int i = 0; i < employees.length; i++) {
             if (employees [i].getId() == id){
                 Employee victim = employees [i];
@@ -48,7 +54,6 @@ public class CompanyImpl implements Company {
 
     @Override
     public int size() {
-
         return size;
     }
 
