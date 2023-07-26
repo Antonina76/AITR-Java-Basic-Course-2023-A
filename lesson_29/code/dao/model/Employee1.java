@@ -2,14 +2,14 @@ package dao.model;
 
 import java.util.Objects;
 
-public  abstract  class Employee {
+public  abstract  class Employee1 {
    protected  static double minWage = 30.0;
     protected final int id;
     protected String firstName;
     protected String lastName;
     protected double hours;
 
-    public Employee(int id, String firstName, String lastName, double hours) {
+    public Employee1(int id, String firstName, String lastName, double hours) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -48,7 +48,7 @@ public  abstract  class Employee {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Employee employee = (Employee) o;
+        Employee1 employee = (Employee1) o;
         return id == employee.id;
     }
 

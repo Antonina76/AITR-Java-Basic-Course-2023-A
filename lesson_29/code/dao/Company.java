@@ -1,17 +1,17 @@
 package dao;
 
-import dao.model.Employee;
+import dao.model.Employee1;
 
 public interface Company {
     //перечень действий = методов
     //берем на работу
-    boolean addEmployee (Employee employee);//добавить сотрудника в компанию
+    boolean addEmployee (Employee1 employee);//добавить сотрудника в компанию
 
     //увольнение
-    Employee removeEmployee (int id);//удаляем сотрудника из компании
+    Employee1 removeEmployee (int id);//удаляем сотрудника из компании
 
     // найти сотрудника по id
-    Employee findEmployee (int id);//ищем сотрудника
+    Employee1 findEmployee (int id);//ищем сотрудника
 
     // размер компании
     int size ();
@@ -19,8 +19,5 @@ public interface Company {
     void printEmployee();
 
 
-
-
-
-
+    Employee1 printEmployee(Employee1[] employees);
 }

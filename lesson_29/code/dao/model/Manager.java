@@ -1,7 +1,7 @@
 package dao.model;
 
 //Manager: base + grade*hours
-public class Manager extends Employee {
+public class Manager extends Employee1 {
 
     //fields
     private double baseSalary;

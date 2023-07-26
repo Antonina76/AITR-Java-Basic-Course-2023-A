@@ -1,7 +1,7 @@
 package dao.model;
 
 //Worker: wage*hours
-public class WageEmployee extends Employee {
+public class WageEmployee extends Employee1 {
     private double wage;//почасовая ставка
 
     public WageEmployee(int id, String firstName, String lastName, double hours, double wage) {

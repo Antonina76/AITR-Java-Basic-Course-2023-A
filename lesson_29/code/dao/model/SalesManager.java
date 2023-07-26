@@ -1,7 +1,7 @@
 package dao.model;
 
 //SalesManager: salesValue * percent
-public class SalesManager extends Employee {
+public class SalesManager extends Employee1 {
     private double salesValue;
     private double percent;
 

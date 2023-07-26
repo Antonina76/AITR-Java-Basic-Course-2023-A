@@ -1,7 +1,7 @@
 package dao.test;
 import dao.Company;
 import dao.CompanyImpl;
-import dao.model.Employee;
+import dao.model.Employee1;
 import dao.model.Manager;
 import dao.model.SalesManager;
 import dao.model.WageEmployee;
@@ -12,11 +12,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class CompanyImplTest {
 Company company;
-Employee[] firm;
+Employee1[] firm;
    @BeforeEach
     void setUp() {
         company = new CompanyImpl(5);
-        firm = new Employee[4];
+        firm = new Employee1[4];
         firm[0] = new Manager(100, "John","Smith",174,5000,5);
         firm[1] = new SalesManager(101, "Bread", "Pitt", 174, 300000, 0.1);
         firm[2] = new SalesManager(102, "Julia", "Roberts", 174, 300000, 0.1);
@@ -37,7 +37,7 @@ Employee[] firm;
        //assertTrue(company.addEmployee(firm[2])); // можно добавить сотрудника
        //assertTrue(company.addEmployee(firm[3])); // можно добавить сотрудника
        assertEquals(4, company.size()); // ожидаем рост размера компании
-       Employee employee = new SalesManager(106, "Peter", "Petrov", 180, 40000, 0.1);
+       Employee1 employee = new SalesManager(106, "Peter", "Petrov", 180, 40000, 0.1);
        assertTrue(company.addEmployee(employee));
        assertEquals(5, company.size());
        assertFalse(company.addEmployee(firm[3]));// нельзя добавить уже имеющегося сотрудник
@@ -63,10 +63,14 @@ Employee[] firm;
 
     @Test
     void size() {
+        System.out.println(company.size());
+       assertEquals(4,company.size());
     }
 
     @Test
     void printEmployees() {
+
+
     }
 
 
