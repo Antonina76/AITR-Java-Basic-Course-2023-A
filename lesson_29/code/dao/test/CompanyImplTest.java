@@ -44,7 +44,13 @@ Employee1[] firm;
        employee = new SalesManager(106, "Vasia", "Ivanov", 180, 40000, 0.1);
        assertFalse(company.addEmployee(employee)); //нельзя выйти за размер компании
 
+       for (int i = 0; i < firm.length; i++) {
+           company.addEmployee(firm[i]);
+       }
+
    }
+
+
 
     @Test
     void removeEmployee() {

@@ -19,5 +19,5 @@ public interface Company {
     void printEmployee();
 
 
-    Employee1 printEmployee(Employee1[] employees);
+
 }
