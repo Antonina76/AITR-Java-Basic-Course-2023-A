@@ -15,20 +15,20 @@ public class GarageImpl implements Garage {
         if (car == null || size == cars.length || findCarByRegNum(car.getRegNumber()) != null) {
             return false;
         }
-       // cars[size] = car;
+        // cars[size] = car;
         //size++;
         //return true;
-        cars [size++] = car;//постфиксная операция ++ увеличит size после присвоения
+        cars[size++] = car;//постфиксная операция ++ увеличит size после присвоения
         return true;
     }
 
     @Override
     public Car removeCar(String regNumber) {
         for (int i = 0; i < size; i++) {
-            if (regNumber.equals(cars[i].getRegNumber())){
+            if (regNumber.equals(cars[i].getRegNumber())) {
                 Car temp = cars[i];
-                cars [i] = cars[--size];//на место удаленного ставим последний
-                cars [size]= null;
+                cars[i] = cars[--size];//на место удаленного ставим последний
+                cars[size] = null;
                 return temp;
             }
 
@@ -48,26 +48,68 @@ public class GarageImpl implements Garage {
 
     @Override
     public Car[] findCarsByModel(String model) {
-        return new Car[0];
+        //подсчитать сколько будет найдено
+        int count = 0;
+        for (int i = 0; i < size; i++) {
+            if (model.equals(cars[i].getModel())) {
+                count++;
+            }
+        }
+        //заполняем массив результатом
+        Car[] res = new Car[count];
+        for (int i = 0, j = 0; j < res.length; i++) {
+            if (model.equals(cars[i].getModel())) {
+                res[j] = cars[i];
+                j++;
+            }
+        }
+        return res;
     }
+
 
     @Override
     public Car[] findCarsByCompany(String company) {
-        return new Car[0];
+        //подсчитать сколько будет найдено
+        int count = 0;
+        for (int i = 0; i < size; i++) {
+            if (company.equals(cars[i].getCompany())) {
+                count++;
+            }
+        }
+        //заполняем массив результатом
+        Car[] res = new Car[count];
+        for (int i = 0, j = 0; j < res.length; i++) {
+            if (company.equals(cars[i].getCompany())) {
+                res[j] = cars[i];
+                j++;
+            }
+        }
+        return res;
     }
 
     @Override
     public Car[] findCarsByEngine(double min, double max) {
+        //todo
         return new Car[0];
     }
 
     @Override
     public Car[] findCarsByColor(String color) {
-        return new Car[0];
+        Car[] existingCars = new Car[size];// Создаем временный массив для хранения найденных машин
+        int count = 0;// Счетчик найденных машин
+        for (int i = 0; i < size; i++) {
+            if (color.equals(cars[i].getColor())) {
+                existingCars[count++] = cars[i];// добавляем машину в массив, если модель совпадает
+            }
+        }
+        Car[] result = new Car[count]; // Создаем новый массив с размером count (количество найденных машин) и копируем в него найденные машины
+        for (int i = 0; i < count; i++) {
+            result[i] = existingCars[i];// операция копирования элементов из массива existingCars в массив result.
+        }
+        return result;
     }
-
-    @Override
-    public int size() {
-        return size;
+        @Override
+        public int size () {
+            return size;
+        }
     }
-}
