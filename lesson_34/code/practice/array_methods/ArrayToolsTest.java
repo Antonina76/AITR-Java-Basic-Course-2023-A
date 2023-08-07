@@ -118,11 +118,26 @@ class ArrayToolsTest {
         Comparator<Soldier1>soldier1Comparator = new Comparator<Soldier1>() {
             @Override
             public int compare(Soldier1 o1, Soldier1 o2) {
-                return o1.getName().compareTo(o2.getName());
+              double compWeight = Double.compare(o1.getWeight(), o2.getWeight());
+                int compHeight = o1.getHeight() - o2.getHeight();
+                if (compWeight != 0) {
+                    return (int) compWeight;
+                } else if (compHeight != 0) {
+                }
+                return compHeight;
+           }
+
+        };
+        Comparator<Integer>integerComparator =new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                return 0;
             }
         };
         ArrayTools.bubbleSort(soldiers,soldier1Comparator);
         ArrayTools.printArray(soldiers);
+
      }
+
 
 }
