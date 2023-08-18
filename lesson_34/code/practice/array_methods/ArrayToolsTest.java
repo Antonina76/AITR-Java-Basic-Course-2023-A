@@ -131,12 +131,21 @@ class ArrayToolsTest {
         Comparator<Integer>integerComparator =new Comparator<Integer>() {
             @Override
             public int compare(Integer o1, Integer o2) {
-                return 0;
+                return o1.intValue()-o2.intValue();
+            }
+        };
+        Comparator<String>stringComparator = new Comparator<String>() {
+            @Override
+            public int compare(String o1, String o2) {
+                return o1.compareTo(o2);
             }
         };
         ArrayTools.bubbleSort(soldiers,soldier1Comparator);
         ArrayTools.printArray(soldiers);
-
+        ArrayTools.bubbleSort(arrNum,integerComparator);
+        ArrayTools.printArray(arrNum);
+        ArrayTools.bubbleSort(arrStr,stringComparator);
+        ArrayTools.printArray(arrStr);
      }
 
 
