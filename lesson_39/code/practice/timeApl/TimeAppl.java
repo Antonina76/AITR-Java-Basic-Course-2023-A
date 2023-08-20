@@ -82,14 +82,13 @@ public class TimeAppl {
         String date2 = "2023-02-02";
         LocalDate localDate1 = dateParse (date1);
         System.out.println(localDate1);
-    //    LocalDate localDate2 = dateParse (date2);
-        //System.out.println(localDate2);
-
+       LocalDate localDate2 = dateParse (date2);
+       System.out.println(localDate2);
 
     }
     private static LocalDate dateParse (String date){
-       // DateTimeFormatter df = DateTimeFormatter.ofPattern("[dd/MM/yyyy][yyyy-MM-dd]" );
-        DateTimeFormatter df = DateTimeFormatter.ofPattern("[dd/MM/yyyy][dd.MM.yyyy]");
+       DateTimeFormatter df = DateTimeFormatter.ofPattern("[dd/MM/yyyy][yyyy-MM-dd]" );
+     //   DateTimeFormatter df = DateTimeFormatter.ofPattern("[dd/MM/yyyy][dd.MM.yyyy]");
 
         return  LocalDate.parse(date,df);
     }
