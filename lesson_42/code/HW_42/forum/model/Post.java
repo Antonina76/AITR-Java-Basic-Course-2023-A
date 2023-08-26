@@ -25,6 +25,18 @@ public class Post implements Comparable<Post>{
         this.author = author;
         this.date = date;
     }
+
+    public Post(int postId, String title, String author, String content, LocalDateTime date, int likes) {
+        this.postId = postId;
+        this.title = title;
+        this.author = author;
+        this.content = content;
+        this.date = date;
+        this.likes = likes;
+    }
+
+    public Post() {
+    }
     //getter
 
 
@@ -54,7 +66,8 @@ public class Post implements Comparable<Post>{
 
     @Override
     public int compareTo(Post o) {
-        return 0;
+
+        return date.compareTo(o.date);
     }
     //setter
 
@@ -101,8 +114,8 @@ public class Post implements Comparable<Post>{
     }
 
     public int addLike (int likes){
-        likes++;
-        return likes;
+
+        return likes++;
 
     }
 }

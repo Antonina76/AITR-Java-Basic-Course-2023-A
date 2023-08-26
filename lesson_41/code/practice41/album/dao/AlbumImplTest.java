@@ -20,10 +20,10 @@ class AlbumImplTest {
     @BeforeEach
     void setUp() {
         albums = new AlbumImpl(7);
-        photos[0] = new Photo(1,1,"title1","url1",now.minusDays(10));
-        photos[1] = new Photo(1,2,"title2","url2",now.minusDays(10));
-        photos[2] = new Photo(1,3,"title3","url3",now.minusDays(5));
-        photos[3] = new Photo(2,1,"title1","url1",now.minusDays(10));
+        photos[0] = new Photo(1,1,"title1","url1",now.minusDays(6));
+        photos[1] = new Photo(1,2,"title2","url2",now.minusDays(6));
+        photos[2] = new Photo(1,3,"title3","url3",now.minusDays(6));
+        photos[3] = new Photo(2,5,"title1","url1",now.minusDays(6));
         photos[4] = new Photo(2,4,"title4","url4",LocalDateTime.of(now.minusDays(2).toLocalDate(), LocalTime.MAX));
         photos[5] = new Photo(1,4,"title4","url1",LocalDateTime.of(now.minusDays(2).toLocalDate(), LocalTime.MAX));
      for (int i = 0; i < photos.length; i++) {
@@ -76,7 +76,7 @@ class AlbumImplTest {
     void getPhotoBetweenDate() {
         LocalDate ld = now.toLocalDate();
         System.out.println(ld);
-        Photo[]actual = albums.getPhotoBetweenDate(ld.minusDays(10),ld.minusDays(5));
+        Photo[]actual = albums.getPhotoBetweenDate(ld.minusDays(7),ld.minusDays(5));
         Arrays.sort(actual);
         Photo[]expected = {photos[0],photos[1],photos[2],photos[3]};
         assertArrayEquals(expected,actual);
@@ -84,6 +84,7 @@ class AlbumImplTest {
 
     @Test
     void size() {
+
         assertEquals(6,albums.size());
     }
 }

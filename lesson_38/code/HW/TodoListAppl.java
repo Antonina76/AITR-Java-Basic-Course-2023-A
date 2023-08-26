@@ -34,13 +34,14 @@ public class TodoListAppl {
                 int id = scanner.nextInt();
                 Task removedTask = todoList.removeTask(id -1);
                 System.out.println(removedTask + "is removed");
-
+                break;
             }
             case 4:{
                 System.out.println("Please input your  Id number");
                 int id = scanner.nextInt();
                 Task foundId = todoList.findTask(id-1);
                 System.out.println( "Task found"+ foundId);
+                break;
             }
             case 5:
                 return;

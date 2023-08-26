@@ -1,7 +1,7 @@
 package HW_42.forum.dao;
 
 public enum Menu {
-    ADD(1),REMOVE(2),FIND(3),LIST(4),EXIT(5);
+    ADD(1),LIST(2),REMOVE(3),FIND_ID(4),FIND_AUTHOR (5),EXIT(6);
     private int menuNum;
     //constructor
 

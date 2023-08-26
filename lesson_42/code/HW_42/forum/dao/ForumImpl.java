@@ -12,8 +12,8 @@ import java.util.function.Predicate;
 
 public class ForumImpl implements Forum {
     static Comparator<Post> postComparator = (p1, p2) -> {
-        int res = p1.getDate().compareTo(p2.getDate());//sort by date
-        return res != 0 ? res : Integer.compare(p1.getPostId(), p2.getPostId());//sort by postId
+        int res = p1.getPostId()-p2.getPostId();//sort by comparator
+        return res;
     };
 
     private Post[] posts;
@@ -23,7 +23,8 @@ public class ForumImpl implements Forum {
 
 
     public ForumImpl(int capacity) {
-        this.posts = new Post[10];
+        posts = new Post[capacity];
+
     }
 
     @Override
@@ -31,15 +32,17 @@ public class ForumImpl implements Forum {
         if (post == null) {
             return false;
         }
-        Post postsCopy[]= new Post[posts.length+1];
+        Post postsCopy[]= Arrays.copyOf(posts,size+1);
      //   posts = Arrays.copyOf(posts,posts.length+1);
        int index = Arrays.binarySearch(postsCopy, 0,size,post, postComparator);
         //found a place to put the post and sorting array by comparator
        index = index >= 0 ? index : -index - 1;//processes the index
 
-       System.arraycopy(postsCopy, index, postsCopy, index + 1, size - index);//copy array elements from the index one place to the right
-       postsCopy[index] = post;//insert post
+       System.arraycopy(posts, 0, postsCopy, 0, index);//copy array elements from the index one place to the right
+       System.arraycopy(postsCopy,index,postsCopy,index+1,size-index);
+        postsCopy[index] = post;//insert post
         size++;
+        posts=postsCopy;
         return true;
     }
 
@@ -106,5 +109,11 @@ public class ForumImpl implements Forum {
         }
         return Arrays.copyOf(res,j);//копируем только ту часть, где нет null
     }
+    public void printPost() {
+        for (int i = 0; i < size; i++) {
+            System.out.println(posts[i]);
+        }
+        System.out.println("You have " + size + " posts. ");
 
+    }
 }
