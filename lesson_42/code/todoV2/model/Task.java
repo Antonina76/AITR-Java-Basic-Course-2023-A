@@ -36,7 +36,7 @@ private static int  nextId;
 
     @Override
     public String toString() {
-        return "Task{" + "taskId=" + taskId + ", task='" + task + '}';
+        return (taskId + 1)+ " : " + task;
     }
 
     @Override

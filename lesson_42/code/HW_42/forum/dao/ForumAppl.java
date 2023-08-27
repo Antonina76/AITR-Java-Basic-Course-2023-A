@@ -3,11 +3,11 @@ import HW_42.forum.dao.ForumImpl;
 import HW_42.forum.dao.Forum;
 import HW_42.forum.model.Post;
 import auto_application.models.Auto;
-
+import java.io.IOException;
 import java.util.Scanner;
-
+import java.io.IOException;
 public class ForumAppl {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         System.out.println("Welcome to Forum!");
         ForumImpl forum = new ForumImpl(1000);
         Scanner scanner = new Scanner(System.in);
@@ -23,6 +23,7 @@ public class ForumAppl {
                     String post = scanner.nextLine();
                     Post post1 = new Post();
                     forum.addPost(post1);
+                    forum.savePosts();
                     break;
                 }
                 case 2:{//list posts

@@ -12,7 +12,8 @@ public class TodoListAppl {
         System.out.println("Welcome to the TodoList Application !");
         TodoListImpl todoList = new TodoListImpl(10);
         Scanner scanner = new Scanner(System.in);
-
+        todoList.readTasks();
+        todoList.printTasks();
         while (true) {
             Menu.printMenu();
             System.out.println();

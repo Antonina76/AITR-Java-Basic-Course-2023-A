@@ -1,9 +1,7 @@
 package todoV2.dao;
 import todoV2.model.Task;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 
 
 public class TodoListImpl implements TodoList {
@@ -85,7 +83,31 @@ public class TodoListImpl implements TodoList {
             String str = String.valueOf(tasks[i]);//переводим tasks[i] в строку
             bufferedWriter.write(str + "\n");
         }
-        bufferedWriter.flush();
-    }
+        bufferedWriter.flush();//толчок к исполнению
+
+        }
+
+        //задачи надо считывать тоже в цикле по строкам
+        //строку надо превратить в объеке Task - номер строки это ID, а то что стоилт после: это содержание задачи
+        @Override
+        public void readTasks() throws IOException {
+            BufferedReader bf = new BufferedReader(new FileReader(INPUT));
+            String str;
+            int countTasks = 0;
+            while ((str = bf.readLine())!= null){
+            int index = str.indexOf(':');//нашли индекс
+            String t = str.substring(index +1,str.length()).trim();//выкусили из строки тексте после :
+            Task task = new Task(t);//создали новый объект класса Таск
+            tasks[countTasks] = task;//поместили этот объект в массив
+            countTasks++;// счетчик увеличили на 1
+                quantity++;
+
+            }
+
+
+
+
+        }
+
 
 }

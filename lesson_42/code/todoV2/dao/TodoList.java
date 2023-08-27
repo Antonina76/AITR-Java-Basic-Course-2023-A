@@ -3,6 +3,7 @@ package todoV2.dao;
 
 import todoV2.model.Task;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public interface TodoList {
@@ -14,5 +15,5 @@ public interface TodoList {
     int quantity ();
     void saveTasks() throws IOException;
 
-
+    void readTasks () throws IOException;
 }

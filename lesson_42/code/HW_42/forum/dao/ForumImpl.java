@@ -3,6 +3,9 @@ package HW_42.forum.dao;
 import HW_42.forum.model.Post;
 import practice41.album.model.Photo;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -10,12 +13,15 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.function.Predicate;
 
+
+
 public class ForumImpl implements Forum {
     static Comparator<Post> postComparator = (p1, p2) -> {
         int res = p1.getPostId()-p2.getPostId();//sort by comparator
         return res;
     };
-
+    final String OUTPUT = "tasks.txt";
+    final String INPUT = "tasks.txt";
     private Post[] posts;
     private int size;
 
@@ -115,5 +121,13 @@ public class ForumImpl implements Forum {
         }
         System.out.println("You have " + size + " posts. ");
 
+    }
+    public void savePosts() throws IOException {
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(OUTPUT));
+        for (int i = 0; i < size; i++) {
+            String post = String.valueOf(posts[i]);//переводим tasks[i] в строку
+            bufferedWriter.write(post + "\n");
+        }
+        bufferedWriter.flush();
     }
 }
