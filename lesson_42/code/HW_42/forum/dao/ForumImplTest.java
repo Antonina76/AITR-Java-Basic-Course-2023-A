@@ -68,7 +68,7 @@ class ForumImplTest {
     void getPostByAuthor() {
         Post[]actual = forum.getPostByAuthor("Antonina");
         Arrays.sort(actual);
-        Post[] expected = {posts[0]};
+        Post[] expected = {posts[0],posts[5]};
         assertArrayEquals(actual,expected);
 
     }

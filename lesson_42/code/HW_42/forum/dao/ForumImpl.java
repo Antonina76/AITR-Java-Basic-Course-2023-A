@@ -35,7 +35,15 @@ public class ForumImpl implements Forum {
 
     @Override
     public boolean addPost(Post post) {
-        if (post == null) {
+            Post tmp = getPostById(post.getPostId());
+            if (post == null || getPostById(post.getPostId()) != null) {
+                return false;
+            }
+            posts = Arrays.copyOf(posts, posts.length + 1);
+            posts[posts.length - 1] = post;
+            size++;
+            return true;
+     /*   if (post == null) {
             return false;
         }
         Post postsCopy[]= Arrays.copyOf(posts,size+1);
@@ -43,13 +51,14 @@ public class ForumImpl implements Forum {
        int index = Arrays.binarySearch(postsCopy, 0,size,post, postComparator);
         //found a place to put the post and sorting array by comparator
        index = index >= 0 ? index : -index - 1;//processes the index
-
        System.arraycopy(posts, 0, postsCopy, 0, index);//copy array elements from the index one place to the right
        System.arraycopy(postsCopy,index,postsCopy,index+1,size-index);
         postsCopy[index] = post;//insert post
         size++;
         posts=postsCopy;
         return true;
+
+      */
     }
 
     @Override
@@ -88,7 +97,8 @@ public class ForumImpl implements Forum {
 
     @Override
     public Post[] getPostByAuthor(String author) {
-        return findByPredicate (p -> p.getAuthor() == author);
+
+        return findByPredicate (p -> p.getAuthor().equals(author));
     }
 
     @Override
